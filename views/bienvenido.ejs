@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/style.main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script src="view.func.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+</head>
+<body>
+    <header>
+        <h1>Residuos Granja UFPSO</h1>
+    </header>
+    <div class="bar">
+        <nav>
+            <a href="/residuos">Residuos</a>
+            <a href="#">Productos</a>
+            <a href="/animales">Animales</a>
+        </nav>
+    </div>
+
+    <main>
+        <div id="first-block">
+            <h2 id="cent">Productos</h2>
+            <div id="product-container">
+            </div>
+        </div>
+    </main>
+    <div id="formulario-container" class="hidden">
+        <div id="cerrar-formulario">X</div>
+        <form id="formulariop" action="/producto" method="POST">
+            <h2>Registrar Nuevo Producto</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="Carnico">Carnico</option>
+                    <option value="Lacteos">Lacteo</option>
+                    <option value="Purina">Concentrado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="0" required>
+            </div>
+            <input type="date" id="fecha_registro" name="fecha_registro" value="<%= new Date().toISOString() %>">
+            <input type="hidden" id="fecha_salida" name="fecha_salida" value="">
+            <div class="form-group">
+                <label for="id_animal">ID Animal:</label>
+                <input type="number" id="id_animal" name="id_animal" min="1">
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div id="foot-block">
+        <h2>¡Procesar, imprimir reportes!</h2>
+        <div>
+            <button id="btnMostrarFormulario">Registrar Nuevo Producto</button>
+            <button onclick="eliminarProducto()">Eliminar Producto</button>
+        </div>
+    </div>
+
+</body>
+</html>

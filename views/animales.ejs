@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/styles/style.main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="./animal.func.js" defer></script> <!-- defer para asegurar que el script se ejecute después de cargar el DOM -->
+</head>
+<body>
+    <header>
+        <h1>Residuos Granja UFPSO</h1>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Buscar animal...">
+            <button id="search-button" type="button">Buscar</button>
+        </form>
+    </header>
+    <div class="bar">
+        <nav>
+            <a href="/residuos">Residuos</a>
+            <a href="/bienvenido">Productos</a>
+            <a href="">Animales</a>
+        </nav>
+    </div>
+
+    <main>
+        <div id="first-block">
+            <h2 id="cent">Animales</h2>
+            <div id="animal-container">
+            </div>
+        </div>
+    </main>
+    <div id="formulario-container" class="hidden">
+        <div id="cerrar-formulario">X</div>
+        <form id="formulario">
+            <h2>Registrar Nuevo Animal</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" name="tipo" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_ingreso">Fecha de Ingreso:</label>
+                <input type="date" id="fecha_ingreso" name="fecha_ingreso" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_sacrificio">Fecha de Sacrificio:</label>
+                <input type="date" id="fecha_sacrificio" name="fecha_sacrificio">
+            </div>
+            <button>Registrar</button>
+        </form>
+    </div>
+    
+    <div id="foot-block">
+        <h2>¡Procesar, imprimir reportes!</h2>
+        <div>
+            <button id="btnMostrarFormulario">Registrar Nuevo Animal</button>
+            <button onclick="norecuerdoelnombre()">Reporte</button>
+        </div>
+    </div>
+
+    <script src="./animal.func.js"></script>
+</body>
+</html>
